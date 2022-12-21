@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript AddEvent Listeners</title>
+        <style>
+            .box{
+                background-color: black;
+                padding: 10px 10px;
+                border: 2px solid crimson;
+                color:white;
+                transition: 1.5s ease-in-out;
+            }
+            .images img:hover{
+                cursor: pointer;
+                transform: scale(0.5);
+                transition: 1.5s ease-in-out;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="box" id="box">
+            <h1 id="info">Hover over an image to get information about it</h1>
+        </div>
+        <div class="images">
+           <img id="img1" src="./images/code.jpeg" width="200px" alt="Learn website development" />
+           <img id="img2" src="./images/graphics.jpg" width="200px" alt="Learn Graphics Design" />
+           <img id="img3" src="./images/learn.jpeg" width="200px" alt="Learn Digital Marketing"/>
+        </div>
+
+           <h1 id="web">Website Development</h1>
+           <p id="para">hover over me</p>
+           <button id="btn">Change info</button>
+
+
+           
+   
+        <script>
+
+            
+
+              let image1 = document.getElementById('img1');
+              let image2 = document.getElementById('img2');
+              let image3 = document.getElementById('img3');
+              let info = document.getElementById('info');
+              let box = document.getElementById('box');
+              let defaultinfo = document.getElementById('info').textContent;
+
+              image1.addEventListener('mousemove', () => {
+                   info.innerHTML = image1.alt;
+                   box.style.backgroundColor = 'red';
+              })
+              image1.addEventListener('mouseleave', () => {
+                   info.innerHTML = defaultinfo;
+                   box.style.backgroundColor  = 'black';
+              })
+
+              image2.addEventListener('mousemove', () => {
+                   info.innerHTML = image2.alt;
+                   box.style.backgroundColor = 'green';
+              })
+
+              image2.addEventListener('mouseleave', () => {
+                   info.innerHTML = defaultinfo;
+                   box.style.backgroundColor = 'black';
+              })
+
+              image3.addEventListener('mousemove', () => {
+                   info.innerHTML = image3.alt;
+                   box.style.backgroundColor = 'yellow';
+              })
+
+              image3.addEventListener('mouseleave', () => {
+                   info.innerHTML = defaultinfo;
+                   box.style.backgroundColor = 'black';
+              })
+
+            
+            btn.addEventListener('click', () => {
+                document.getElementById('web').innerHTML = 'Digital Marketing';
+                document.getElementById('web').style.color = 'red';
+            })
+            btn.addEventListener('dblclick', () => {
+                document.getElementById('web').innerHTML = 'Andriod Development';
+            })
+         
+            para.addEventListener('mousemove', () => {
+                document.getElementById('web').style.backgroundColor = 'yellow';
+            })
+            para.addEventListener('mouseleave', () => {
+                 document.getElementById('web').innerHTML = 'Website Development';
+                 document.getElementById('web').style.backgroundColor = 'white';
+            })
+
+
+        </script>
+    </body>
+</html>
